@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
  
     $errors = [];
-    if($full_name === '' || strlen($full_name) > 2) {
+    if ($full_name === '' || strlen($full_name) < 2) {
         $errors[] = 'Full name is required.';
     }
 
-    if($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'A valid email is required.';
     }
     if($phone === '' || strlen($phone) > 15) {

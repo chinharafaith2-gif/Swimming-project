@@ -1,13 +1,13 @@
 <?php
-define('DB_ENABLED' ,true);
-define('DB_HOST' ,'');
-define('DB_USER' ,'');
-define('DB_PASS' ,'');
-define('DB_NAME' ,'');
+define('DB_ENABLED', getenv('DB_ENABLED') !== false ? getenv('DB_ENABLED') !== 'false' : true);
+define('DB_HOST', getenv('DB_HOST') ?: '');
+define('DB_USER', getenv('DB_USER') ?: '');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: '');
 
 function get_db_connection() {
-    if(!DB_ENABLED) {
-       return null;
+    if (!DB_ENABLED) {
+        return null;
     }
 
     try {
