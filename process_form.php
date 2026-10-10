@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="home.html" class="brand">
                     Harare Amateur Swimming
                 </a>
-                <button class="nav-toggle" id="navToggle"aria-label="Toggle navigation"aria-expanded="false">nav-toggle</button>
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false"><span class="nav-toggle-bar" aria-hidden="true"></span><span class="nav-toggle-bar" aria-hidden="true"></span><span class="nav-toggle-bar" aria-hidden="true"></span></button>
                 <ul  class="nav-links" id="navLinks">
                     <li> <a href="home.html"class="active">Home</a></li>
                     <li> <a href="about.html">about us</a></li>
@@ -104,5 +104,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </footer>
 
+        <script src="Js/script.js"></script>
         </body>
          </html>

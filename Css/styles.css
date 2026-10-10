@@ -107,13 +107,29 @@ a { color: inherit; }
   border: 2px solid var(--gold);
   color: var(--gold);
   border-radius: var(--radius);
-  padding: 0.4rem 0.7rem;
-  font-size: 1.1rem;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   cursor: pointer;
 }
 
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--gold);
+}
+
 @media (max-width: 760px) {
-  .nav-toggle { display: block; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
   .nav-links {
     position: absolute;
     top: 100%;

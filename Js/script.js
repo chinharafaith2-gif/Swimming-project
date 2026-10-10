@@ -211,3 +211,8 @@ function setFooterYear() {
   }
 }
 
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupNavToggle);
+} else {
+  setupNavToggle();
+}
