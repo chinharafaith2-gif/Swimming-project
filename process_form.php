@@ -4,11 +4,24 @@ $status = '';
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $full_name = trim(filter_input(INPUT_POST, 'full_name', FILTER_SANITIZE_SPECIAL_CHARS));
-    $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-    $phone = trim(filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_SPECIAL_CHARS));
-    $reason = trim(filter_input(INPUT_POST, 'reason', FILTER_SANITIZE_SPECIAL_CHARS));
-    $message = trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_SPECIAL_CHARS));
+    $full_name_input = $_POST['full_name'] ?? $_POST['-full_name'] ?? '';
+    $full_name = trim(filter_var((string) $full_name_input, FILTER_SANITIZE_SPECIAL_CHARS));
+    $email = trim(filter_var((string) ($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL));
+    $phone = trim(filter_var((string) ($_POST['phone'] ?? ''), FILTER_SANITIZE_SPECIAL_CHARS));
+    $reason_input = strtolower(trim((string) ($_POST['reason'] ?? '')));
+    $message = trim(filter_var((string) ($_POST['message'] ?? ''), FILTER_SANITIZE_SPECIAL_CHARS));
+
+    $reason_values = [
+        'join' => 'Join',
+        'i want to join as a swimmer' => 'Join',
+        'general inquiry' => 'General Inquiry',
+        'general enquiry' => 'General Inquiry',
+        'general_enquiry' => 'General Inquiry',
+        'sponsorship' => 'Sponsorship',
+        'sponsorship/ partnership' => 'Sponsorship',
+        'sponsorship/partnership' => 'Sponsorship',
+    ];
+    $reason = $reason_values[$reason_input] ?? '';
 
  
     $errors = [];
@@ -19,10 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'A valid email is required.';
     }
-    if($phone === '' || strlen($phone) > 15) {
-        $errors[] = 'Phone number is required.';
+    if ($phone !== '' && !preg_match('/^[0-9+ ()-]{7,20}$/', $phone)) {
+        $errors[] = 'Please enter a valid phone number.';
     }
-    if($reason === '' || !in_array($reason, ['General Inquiry', 'Join', 'Sponsorship'])) {
+    if ($reason === '' || !in_array($reason, ['General Inquiry', 'Join', 'Sponsorship'], true)) {
         $errors[] = 'A valid reason is required.';
     }
    

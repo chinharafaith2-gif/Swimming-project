@@ -30,16 +30,16 @@
         </section>
         <section> 
             <div class="container">
-                <form class="club-form" id="clubform" method="POST" action="process_form.php"novalidate>
-                    <div class="field" id="field -full_name">
-                        <label for="-full_name">Full Name</label>
-                        <input type="text" id="-full_name" name="-full_name"placeholder="e.g Faith Chinhara">
+                <form class="club-form" id="clubForm" method="POST" action="process_form.php">
+                    <div class="field" id="field-full_name">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" placeholder="e.g Faith Chinhara" minlength="2" maxlength="50" required>
                         <p class="error">Please Enter Your Full Name</p>
 
                     </div>
                     <div class="field" id=" field-email">
                         <label for="email">email</label>
-                        <input type="email" id="email" name="email"placeholder="e.g me@example.com">
+                        <input type="email" id="email" name="email" placeholder="e.g me@example.com" required>
                         <p class="error">Please Enter Your Email</p>
 
                     </div>
@@ -52,9 +52,9 @@
                     <div class="field" id="field-reason">
                         <label for="reason">Reason for contacting us</label>
                         <select name="reason" id="reason">
-                            <option value="join" selected>I want to join as a swimmer</option>
-                             <option value="general_enquiry" selected>General Enquiry</option>
-                              <option value="sponsorship" selected>Sponsorship/ Partnership</option>
+                            <option value="Join">I want to join as a swimmer</option>
+                            <option value="General Inquiry">General Enquiry</option>
+                            <option value="Sponsorship">Sponsorship/ Partnership</option>
 
                         </select>
 
