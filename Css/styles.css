@@ -150,7 +150,7 @@ a { color: inherit; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  background: url('../Images/fay4.jpeg') center/cover no-repeat;
+  background: url('images/fay4.jpeg') center/cover no-repeat;
   color: var(--bone);
   padding: 5rem 1.5rem 6rem;
   text-align: center;
