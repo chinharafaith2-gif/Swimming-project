@@ -491,6 +491,13 @@ form.club-form {
   color: #8a7c6a;
   font-size: 0.8rem;
 }
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
