@@ -209,7 +209,7 @@ section { padding: 4rem 0; }
 .section-head { max-width: 640px; margin: 0 auto 2.5rem; text-align: center; }
 .eyebrow {
   font-family: var(--font-mono);
-  color: var(--clay-dark);
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-size: 0.78rem;
