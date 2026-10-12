@@ -150,9 +150,7 @@ a { color: inherit; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  background:
-    linear-gradient(180deg, rgba(8,47,73,0.88), rgba(8,47,73,0.94)),
-    repeating-linear-gradient(90deg, #0e4a70 0 80px, #082f49 80px 160px);
+  background: url('../Images/fay4.jpeg') center/cover no-repeat;
   color: var(--bone);
   padding: 5rem 1.5rem 6rem;
   text-align: center;
